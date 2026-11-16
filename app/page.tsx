@@ -5,8 +5,30 @@ import { supabase } from "@/lib/supabase";
 
 type Tournament = { id:string; name:string; team_a:string; team_b:string; score_a:number; score_b:number };
 type Winner = { id:string; sport:string; winner_name:string };
-const SPORTS = ["Football","Cricket","Basketball","Badminton","Athletics","Volleyball","Chess","Table Tennis"];
-
+const SPORTS = [
+  "Carrom 7-18 Years Old",
+  "Carrom Men",
+  "Carrom Women",
+  "Football 7-11 Years Old",
+  "Football 12-18 Years Old",
+  "Football Men",
+  "Cricket 7-11 Years Old",
+  "Cricket 12-18 Years Old",
+  "Cricket Men",
+  "Cricket Women",
+  "Chess 7-18 Years Old",
+  "Chess Men",
+  "Chess Women",
+  "Table Tennis 7-18 Years Old",
+  "Table Tennis Men",
+  "Badminton 7-11 Years Old",
+  "Badminton 12-18 Years Old",
+  "Badminton Men",
+  "Badminton Women",
+  "Kho-kho 7-11 Years Old",
+  "Kho-kho 12-18 Years Old",
+  "Kho-kho Women" 
+];
 export default function Home() {
   const db = supabase();
   const [tournament,setTournament] = useState<Tournament|null>(null);
