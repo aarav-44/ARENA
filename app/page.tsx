@@ -27,7 +27,10 @@ const SPORTS = [
   "Badminton Women",
   "Kho-kho 7-11 Years Old",
   "Kho-kho 12-18 Years Old",
-  "Kho-kho Women" 
+  "Kho-kho Women",
+  "Walkathon",
+  "Duothon",
+  "Cyclothon"
 ];
 export default function Home() {
   const db = supabase();
