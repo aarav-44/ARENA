@@ -102,7 +102,7 @@ export default function Home() {
           <button className="btn primary" onClick={()=>updateTournament({name:(document.getElementById("eventName") as HTMLInputElement).value,team_a:(document.getElementById("teamA") as HTMLInputElement).value,team_b:(document.getElementById("teamB") as HTMLInputElement).value})}>Save match details</button>
         </div>}
         <div className="grid">
-          {[{name:tournament.team_a,score:tournament.score_a,key:"score_a" as const},{name:tournament.team_b,score:tournament.score_b,key:"score_b" as const}].map((team,i)=><div className="panel team" key={i}>
+          {[{name:tournament.team_a,score:tournament.score_a,key:"score_a" as const},{name:tournament.team_b,score:tournament.score_b,key:"score_b" as const}].map((team,i)=><div className={`panel team ${i === 0 ? "team-a" : "team-b"}`} key={i}>
             <h3>{team.name}</h3><div className="score">{team.score}</div>
             {isOwner&&<div className="controls"><button disabled={busy} onClick={()=>updateTournament({[team.key]:Math.max(0,team.score-1)})}>−</button><button className="btn primary" disabled={busy} onClick={()=>updateTournament({[team.key]:team.score+1})}>+</button></div>}
           </div>)}
